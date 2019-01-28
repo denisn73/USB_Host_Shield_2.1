@@ -1,3 +1,7 @@
+# USB Host Library Rev.2.1
+
+Add Arduino STM32 support for _VARIANT_ARDUINO_STM32_
+
 # USB Host Library Rev.2.0
 
 The code is released under the GNU General Public License.
