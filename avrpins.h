@@ -1207,6 +1207,64 @@ MAKE_PIN(P19, GPIOC, GPIO_PIN_0); // A5
 
 #undef MAKE_PIN
 
+#elif defined(_VARIANT_ARDUINO_STM32_)
+
+#define MAKE_PIN(className, pin) \
+class className { \
+public: \
+  static void Set() { \
+    digitalWrite(pin, HIGH);\
+  } \
+  static void Clear() { \
+    digitalWrite(pin, LOW); \
+  } \
+  static void SetDirRead() { \
+    pinMode(pin, INPUT); \
+  } \
+  static void SetDirWrite() { \
+    pinMode(pin, OUTPUT); \
+  } \
+  static uint8_t IsSet() { \
+    return digitalRead(pin); \
+  } \
+};
+
+MAKE_PIN(P0,  PB0);  // PB0
+MAKE_PIN(P1,  PB1);  // PB1
+MAKE_PIN(P2,  PB2);  // PB2
+MAKE_PIN(P3,  PB3);  // PB3
+MAKE_PIN(P4,  PB4);  // PB4
+MAKE_PIN(P5,  PB5);  // PB5
+MAKE_PIN(P6,  PB6);  // PB6
+MAKE_PIN(P7,  PB7);  // PB7
+MAKE_PIN(P8,  PB8);  // PB8
+MAKE_PIN(P9,  PB9);  // PB9
+MAKE_PIN(P10, PB10); // PB10
+MAKE_PIN(P11, PB11); // PB11
+MAKE_PIN(P12, PB12); // PB12
+MAKE_PIN(P13, PB13); // PB13
+MAKE_PIN(P14, PB14); // PB14
+MAKE_PIN(P15, PB15); // PB15
+
+MAKE_PIN(P20, PA0);  // PA0
+MAKE_PIN(P21, PA1);  // PA1
+MAKE_PIN(P22, PA2);  // PA2
+MAKE_PIN(P23, PA3);  // PA3
+MAKE_PIN(P24, PA4);  // PA4
+MAKE_PIN(P25, PA5);  // PA5
+MAKE_PIN(P26, PA6);  // PA6
+MAKE_PIN(P27, PA7);  // PA7
+MAKE_PIN(P28, PA8);  // PA8
+MAKE_PIN(P29, PA9);  // PA9
+MAKE_PIN(P30, PA10); // PA10
+MAKE_PIN(P31, PA11); // PA11
+MAKE_PIN(P32, PA12); // PA12
+MAKE_PIN(P33, PA13); // PA13
+MAKE_PIN(P34, PA14); // PA14
+MAKE_PIN(P35, PA15); // PA15
+
+#undef MAKE_PIN
+
 #else
 #error "Please define board in avrpins.h"
 

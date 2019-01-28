@@ -196,6 +196,8 @@ extern SPI_HandleTypeDef SPI_Handle; // Needed to be declared in your main.cpp
 #define MFK_CASTUINT8T
 #endif
 
+//#define ESP8266
+
 // Workaround issue: https://github.com/esp8266/Arduino/issues/2078
 #ifdef ESP8266
 #undef PROGMEM
